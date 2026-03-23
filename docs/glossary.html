@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Глоссарий - 515TEAM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Навигационная панель (как на главной) */
+        .navbar {
+            background-color: #24292e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo a {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #58a6ff;
+        }
+
+        /* Основной контент */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Заголовок */
+        .glossary-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2ea44f;
+        }
+
+        .glossary-header h1 {
+            font-size: 2.5rem;
+            color: #24292e;
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Термины */
+        .glossary-term {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .glossary-term:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .term-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #2ea44f;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #2ea44f;
+            padding-left: 1rem;
+        }
+
+        .term-title small {
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: #666;
+            margin-left: 0.5rem;
+        }
+
+        .term-description {
+            color: #444;
+            line-height: 1.8;
+            margin-top: 0.8rem;
+        }
+
+        .term-description strong {
+            color: #24292e;
+        }
+
+        /* Бэйджи */
+        .badge {
+            display: inline-block;
+            background: #e1e4e8;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #24292e;
+            margin-right: 0.5rem;
+        }
+
+        /* Футер */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e1e4e8;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .term-title {
+                font-size: 1.3rem;
+            }
+            .nav-links {
+                gap: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">515TEAM</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">🏠 Home</a>
+            <a href="glossary.html" style="color: #58a6ff;">📖 Глоссарий</a>
+            <a href="#">📋 Дополнительная спецификация</a>
+            <a href="#">👤 Индивидуальный проект Гота П.А.</a>
+            <a href="#">👤 Индивидуальный проект Пацков А.А.</a>
+            <a href="#">⚙️ Спецификация проекта</a>
+            <a href="#">🗄️ Схема базы данных</a>
+            <a href="#">📝 Функциональные требования</a>
+            <a href="#">📚 Итоги изучения курса</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="glossary-header">
+            <h1>📖 Глоссарий проекта</h1>
+            <p>«Туристическое бюро» — основные термины и определения</p>
+        </div>
+
+        <!-- База данных -->
+        <div class="glossary-term">
+            <div class="term-title">
+                База данных <small>Database</small>
+            </div>
+            <div class="term-description">
+                Центральное хранилище информации о пользователях, автобусах, экипажах, маршрутах и рейсах. В проекте реализована как класс <code>Database</code>, который содержит векторы объектов.
+            </div>
+        </div>
+
+        <!-- Пользователь -->
+        <div class="glossary-term">
+            <div class="term-title">
+                Пользователь <small>User</small>
+            </div>
+            <div class="term-description">
+                Объект, представляющий сотрудника системы. Содержит:
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li>имя пользователя (<code>username</code>)</li>
+                    <li>пароль (<code>password</code>)</li>
+                    <li>роль (<code>role</code>) — администратор (<code>admin</code>) или член экипажа (<code>crew</code>)</li>
+                </ul>
+                Отвечает за <strong>аутентификацию и авторизацию</strong> в системе.
+            </div>
+        </div>
+
+        <!-- Аутентификация -->
+        <div class="glossary-term">
+            <div class="term-title">
+                Аутентификация <small>Authentication</small>
+            </div>
+            <div class="term-description">
+                Процесс проверки логина и пароля пользователя для входа в систему.
+            </div>
+        </div>
+
+        <!-- Авторизация -->
+        <div class="glossary-term">
+            <div class="term-title">
+                Авторизация <small>Authorization</small>
+            </div>
+            <div class="term-description">
+                Процесс определения уровня доступа пользователя к функционалу:
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li>администратор — полный доступ</li>
+                    <li>член экипажа — доступ только к своим данным</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Автобус -->
+        <div class="glossary-term">
+            <div class="term-title">
+                Автобус <small>Bus</small>
+            </div>
+            <div class="term-description">
+                Средство передвижения для туристов. Основные атрибуты:
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li>номер автобуса</li>
+                    <li>название модели</li>
+                    <li>суммарный пробег (<code>mileage</code>)</li>
+                </ul>
+                Каждому автобусу <strong>закреплён один экипаж</strong>.
+            </div>
+        </div>
+
+        <!-- Экипаж -->
+        <div class="glossary-term">
+            <div class="term-title">
+                Экипаж <small>Crew</small>
+            </div>
+            <div class="term-description">
+                Группа сотрудников, обслуживающих один автобус. Состоит из <strong>трёх членов</strong> (<code>CrewMember</code>).
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li>Имеет ссылку на автобус, которым управляет</li>
+                    <li>Начисления за рейсы распределяются между членами экипажа</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Член экипажа -->
+        <div class="glossary-term">
+            <div class="term-title">
+                Член экипажа <small>CrewMember</small>
+            </div>
+            <div class="term-description">
+                Сотрудник, входящий в состав экипажа. Атрибуты:
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li>ФИО</li>
+                    <li>табельный номер</li>
+                    <li>опыт работы (<code>experience</code>)</li>
+                    <li>категория</li>
+                    <li>адрес</li>
+                    <li>год рождения</li>
+                </ul>
+                Может просматривать только свои данные и начисления.
+            </div>
+        </div>
+
+        <!-- Маршрут -->
+        <div class="glossary-term">
+            <div class="term-title">
+                Маршрут <small>Route</small>
+            </div>
+            <div class="term-description">
+                Экскурсионный маршрут с информацией:
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li>название маршрута</li>
+                    <li>начальный и конечный пункт</li>
+                    <li>протяжённость пути (<code>distance</code>)</li>
+                </ul>
+                Используется для планирования рейсов.
+            </div>
+        </div>
+
+        <!-- Рейс -->
+        <div class="glossary-term">
+            <div class="term-title">
+                Рейс <small>Trip</small>
+            </div>
+            <div class="term-description">
+                Выполненное путешествие по маршруту. Атрибуты:
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li>автобус</li>
+                    <li>маршрут</li>
+                    <li>дата отправления и прибытия</li>
+                    <li>количество пассажиров</li>
+                    <li>стоимость билета</li>
+                </ul>
+                Рейс формирует <strong>начисление дохода экипажу</strong>.
+            </div>
+        </div>
+
+        <!-- Начисления -->
+        <div class="glossary-term">
+            <div class="term-title">
+                Начисления <small>Earnings</small>
+            </div>
+            <div class="term-description">
+                Финансовый результат работы экипажа за рейсы. Атрибуты:
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li>сумма</li>
+                    <li>дата</li>
+                    <li>связанный экипаж</li>
+                </ul>
+                Используется для расчета выплат членам экипажа (процент от стоимости рейса).
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 515TEAM | Проект «Туристическое бюро» | GitHub Pages</p>
+    </footer>
+</body>
+</html>
