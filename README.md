@@ -1,1 +1,1 @@
-# tpmp-gr13a-lab4-515team
+[Ссылка на репозиторий с документацией](https://github.com/hhlbby/515team_code)
