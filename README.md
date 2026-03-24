@@ -24,6 +24,7 @@ cd 515team_code
 3. Собрать проект:
 
 ```bash
+mkdir build
 cd build
 cmake ..
 make
